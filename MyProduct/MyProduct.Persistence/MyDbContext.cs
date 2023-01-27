@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MyProduct.Domain;
+using MyProduct.Domain.Entities;
 using MyProduct.Persistence.Mappings;
 using Oracle.ManagedDataAccess.Client;
 

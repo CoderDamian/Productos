@@ -5,9 +5,11 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{23395D07-EB00-483C-AC88-7FBA6FF30EBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProduct.Persistence", "MyProduct.Persistence\MyProduct.Persistence.csproj", "{BF8626C0-1DBB-46FD-894F-1CC69681D76E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProduct.Persistence", "MyProduct.Persistence\MyProduct.Persistence.csproj", "{BF8626C0-1DBB-46FD-894F-1CC69681D76E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProduct.Domain", "MyProduct.Domain\MyProduct.Domain.csproj", "{FE9C5700-091D-4FCE-A0F1-6FA21C59C46A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProduct.Domain", "MyProduct.Domain\MyProduct.Domain.csproj", "{FE9C5700-091D-4FCE-A0F1-6FA21C59C46A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProduct.AppServices", "MyProduct.AppServices\MyProduct.AppServices.csproj", "{1B12CDB3-5D76-4ABA-9C83-91FD67BC6434}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{FE9C5700-091D-4FCE-A0F1-6FA21C59C46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE9C5700-091D-4FCE-A0F1-6FA21C59C46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE9C5700-091D-4FCE-A0F1-6FA21C59C46A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B12CDB3-5D76-4ABA-9C83-91FD67BC6434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B12CDB3-5D76-4ABA-9C83-91FD67BC6434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B12CDB3-5D76-4ABA-9C83-91FD67BC6434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B12CDB3-5D76-4ABA-9C83-91FD67BC6434}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{BF8626C0-1DBB-46FD-894F-1CC69681D76E} = {23395D07-EB00-483C-AC88-7FBA6FF30EBB}
 		{FE9C5700-091D-4FCE-A0F1-6FA21C59C46A} = {23395D07-EB00-483C-AC88-7FBA6FF30EBB}
+		{1B12CDB3-5D76-4ABA-9C83-91FD67BC6434} = {23395D07-EB00-483C-AC88-7FBA6FF30EBB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4FBD3161-080E-40BE-BE86-252E4DB955F7}
