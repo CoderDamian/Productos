@@ -7,7 +7,7 @@ namespace MyProduct.AppServices.Contracts
         Task AddAsync(CreateProductDTO entityDTO);
         Task<IEnumerable<ListProductsDTO>> GetAllAsync();
         Task DeleteAsync(int ID);
-        Task UpdateAsync(int ID, CreateProductDTO entityDTO);
+        Task UpdateAsync(int ID, UpdateProductDTO entityDTO);
         Task SaveAsync();
     }
 }

@@ -54,7 +54,7 @@ namespace MyProduct.AppServices.Services
             await _repository.SaveAsync();
         }
 
-        public async Task UpdateAsync(int ID, CreateProductDTO entity)
+        public async Task UpdateAsync(int ID, UpdateProductDTO entity)
         {
             Product? product = await _repository.ProductRepository
                 .GetByIDAsync(ID)
