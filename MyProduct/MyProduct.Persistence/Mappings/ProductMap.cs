@@ -14,7 +14,7 @@ namespace MyProduct.Persistence.Mappings
                 .HasColumnName("PRODUCTOSID");
 
             builder.Property(p => p.Name)
-                .HasColumnName("NAME");
+                .HasColumnName("NOMBRE");
 
             builder.Property(p => p.Precio)
                 .HasColumnName("PRECIO");
