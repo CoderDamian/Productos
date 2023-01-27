@@ -17,13 +17,8 @@ namespace MyProduct.Persistence.Seedwork
             await _myDbContext.Set<T>().AddAsync(entity);
         }
 
-        public async Task DeleteAsync(int ID)
+        public void DeleteAsync(T entity)
         {
-            T? entity = await _myDbContext.Set<T>().FindAsync(ID);
-
-            if (entity == null)
-                throw new NullReferenceException(nameof(entity));
-
             _myDbContext.Remove(entity);
         }
 
@@ -32,7 +27,14 @@ namespace MyProduct.Persistence.Seedwork
             return await _myDbContext.Set<T>().ToListAsync();
         }
 
-        public void UpdateAsync(T entity)
+        public async Task<T?> GetByIDAsync(int ID)
+        {
+            T? entity = await _myDbContext.Set<T>().FindAsync(ID).ConfigureAwait(false);
+
+            return entity;
+        }
+
+        public void Update(T entity)
         {
             _myDbContext.Set<T>().Update(entity);
         }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using MyProduct.Domain;
+using MyProduct.Domain.Entities;
 
 namespace MyProduct.Persistence.Mappings
 {
