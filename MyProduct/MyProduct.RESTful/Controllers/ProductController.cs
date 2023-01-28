@@ -17,10 +17,41 @@ namespace MyProduct.RESTful.Controllers
             this._productService = productService;
         }
 
+        [HttpDelete("{id}")]
+        public async Task Delete(int ID)
+        {
+            await _productService.DeleteAsync(ID)
+                .ConfigureAwait(false); 
+
+            await _productService.SaveAsync()
+                .ConfigureAwait(false);
+        }
+
         [HttpGet]
         public async Task<IEnumerable<ListProductsDTO>> Get()
         {
-            return await _productService.GetAllAsync().ConfigureAwait(false);
+            return await _productService.GetAllAsync()
+                .ConfigureAwait(false);
+        }
+
+        [HttpPost]
+        public async Task Save([FromBody] CreateProductDTO createProductDTO)
+        {
+            await _productService.AddAsync(createProductDTO)
+                .ConfigureAwait(false);
+
+            await _productService.SaveAsync()
+                .ConfigureAwait(false);
+        }
+
+        [HttpPut("{ID}")]
+        public async Task Update([FromBody] UpdateProductDTO updateProductDTO, int ID)
+        {
+            await _productService.UpdateAsync(ID, updateProductDTO)
+                .ConfigureAwait(false);
+
+            await _productService.SaveAsync()
+                .ConfigureAwait(false);
         }
     }
 }

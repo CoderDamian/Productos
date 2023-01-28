@@ -19,9 +19,14 @@ namespace MyProduct.AppServices.Services
 
         public async Task AddAsync(CreateProductDTO entity)
         {
+            if (entity == null)
+                throw new ArgumentNullException(nameof(entity));
+
             Product productToSave = _mapper.Map<Product>(entity);
 
-            await _repository.ProductRepository.AddAsync(productToSave).ConfigureAwait(false);
+            await _repository.ProductRepository
+                .AddAsync(productToSave)
+                .ConfigureAwait(false);
         }
 
         public async Task DeleteAsync(int ID)
@@ -54,7 +59,7 @@ namespace MyProduct.AppServices.Services
             await _repository.SaveAsync();
         }
 
-        public async Task UpdateAsync(int ID, UpdateProductDTO entity)
+        public async Task UpdateAsync(int ID, UpdateProductDTO entityDTO)
         {
             Product? product = await _repository.ProductRepository
                 .GetByIDAsync(ID)
@@ -62,6 +67,9 @@ namespace MyProduct.AppServices.Services
 
             if (product == null)
                 throw new NullReferenceException(nameof(product));
+
+            //_mapper.Map<product>(entity);
+            _mapper.Map(entityDTO, product);
 
             _repository.ProductRepository.Update(product);
         }
