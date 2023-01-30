@@ -1,0 +1,15 @@
+﻿@page "{id:int}"
+@model MyProduct.UI.Pages.Products.EditModel
+@{
+    <form method="post">
+        <input type="hidden" asp-for="ProductDTO.ID">
+        
+        <label asp-for="ProductDTO.Name"></label>
+        <input asp-for="ProductDTO.Name" class="form-control">
+
+        <label asp-for="ProductDTO.Precio"></label>
+        <input asp-for="ProductDTO.Precio" class="form-control">
+
+        <button action="post">Guardar</button>
+    </form>
+}

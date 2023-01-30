@@ -1,0 +1,16 @@
+﻿@page
+@model MyProduct.UI.Pages.Products.CreateModel
+@{
+    <form method="post">
+        <label asp-for="ProductDTO.ProductID"></label>
+        <input asp-for="ProductDTO.ProductID" class="form-control">
+
+        <label asp-for="ProductDTO.Name"></label>
+        <input asp-for="ProductDTO.Name" class="form-control">
+
+        <label asp-for="ProductDTO.Precio"></label>
+        <input asp-for="ProductDTO.Precio" class="form-control">
+
+        <button type="submit">Save</button>
+    </form>
+}

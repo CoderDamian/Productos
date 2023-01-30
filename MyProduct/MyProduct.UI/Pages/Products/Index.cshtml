@@ -1,0 +1,29 @@
+﻿@page
+@model MyProduct.UI.Pages.Products.IndexModel
+@{
+    <h1>Productos</h1>
+
+    <form method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model.ProductsList.OrderBy(p => p.Name))
+                {
+                    <tr>
+                        <td>@product.ProductID</td>
+                        <td>@product.Name</td>
+                        <td>@product.Precio</td>
+                        <td><a asp-page="./Edit" asp-route-id="@product.ProductID">Edit</a></td>
+                        <td><button type="submit" asp-page-handler="delete" asp-route-id="@product.ProductID">Delete</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+}

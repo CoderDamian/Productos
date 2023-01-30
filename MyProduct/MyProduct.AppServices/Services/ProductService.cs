@@ -54,6 +54,17 @@ namespace MyProduct.AppServices.Services
             return productsDTO;
         }
 
+        public async Task<UpdateProductDTO> GetByIDAsync(int ID)
+        {
+            Product product = await _repository.ProductRepository.GetByIDAsync(ID).ConfigureAwait(false);
+
+            UpdateProductDTO productDTO = new UpdateProductDTO();
+
+            _mapper.Map(product, productDTO);
+
+            return productDTO;
+        }
+
         public async Task SaveAsync()
         {
             await _repository.SaveAsync();

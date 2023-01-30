@@ -5,7 +5,7 @@ using MyProduct.AppServices.DTOs;
 namespace MyProduct.RESTful.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
         private readonly ILogger<ProductController> _logger;
@@ -17,7 +17,7 @@ namespace MyProduct.RESTful.Controllers
             this._productService = productService;
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{ID}")]
         public async Task Delete(int ID)
         {
             await _productService.DeleteAsync(ID)
@@ -31,6 +31,13 @@ namespace MyProduct.RESTful.Controllers
         public async Task<IEnumerable<ListProductsDTO>> Get()
         {
             return await _productService.GetAllAsync()
+                .ConfigureAwait(false);
+        }
+
+        [HttpGet("{ID}")]
+        public async Task<UpdateProductDTO> GetByID(int id)
+        {
+            return await _productService.GetByIDAsync(id)
                 .ConfigureAwait(false);
         }
 
