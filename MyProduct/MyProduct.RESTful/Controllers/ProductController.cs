@@ -17,7 +17,7 @@ namespace MyProduct.RESTful.Controllers
             this._productService = productService;
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{ID}")]
         public async Task Delete(int ID)
         {
             await _productService.DeleteAsync(ID)
