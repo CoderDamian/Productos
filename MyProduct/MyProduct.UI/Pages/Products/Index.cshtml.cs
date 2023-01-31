@@ -45,7 +45,7 @@ namespace MyProduct.UI.Pages.Products
 
             response.EnsureSuccessStatusCode();
 
-            return Page();
+            return RedirectToPage("./Index");
         }
     }
 }
